@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online - Chat Application</title>
     <script src="socket.io/socket.io.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Chat Application</h1>
-</body>
 
+    <script>
+      const socket = io();
+      socket.on("connect", (socket) => {
+        console.log("connected...");
+      });
+      socket.emit("chat", "this is message");
+    </script>
+  </body>
 </html>

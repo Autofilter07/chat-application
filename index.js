@@ -2,11 +2,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const http = require("http");
+require("dotenv").config();
 require("./chatHandler");
 
 // initialization section
 const app = express();
 const server = http.createServer(app);
+
+// middlewares
+app.use(express.static("public"));
 
 // mongoose connection
 async function mongooseConnection() {
